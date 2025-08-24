@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divine Chamber</title>
+  <meta name="description" content="Divine Chamber — a threshold between order and myth. Vera virtus in tenebris floret." />
+  <meta property="og:title" content="Divine Chamber" />
+  <meta property="og:description" content="Vera virtus in tenebris floret." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://magiarchy.bekulov.com/ki/gerb_small.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --gold:#d2b462;
+      --ink:#ececf1;
+      --wine:#1a0f1f;
+      --black:#000;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--black);color:var(--ink);font-family:'Cormorant Garamond', serif;overflow:hidden}
+
+    /* Background */
+    .bg{position:fixed;inset:0;background:url('https://magiarchy.bekulov.com/ki/bg.jpg') center/cover no-repeat;filter:blur(8px) brightness(.42) saturate(.85);transform:scale(1.04);z-index:-3}
+    .vignette{position:fixed;inset:0;pointer-events:none;z-index:-1;
+      background:radial-gradient(circle at 50% 40%, rgba(0,0,0,0), rgba(0,0,0,.8) 70%, rgba(0,0,0,.95) 100%);
+    }
+    .columns{position:fixed;inset:0;z-index:-2;pointer-events:none;
+      background:linear-gradient(to right, rgba(26,15,31,.9) 0 8%, transparent 20% 80%, rgba(26,15,31,.9) 92% 100%);
+    }
+
+    /* Layout */
+    .stage{position:relative;min-height:100%;display:grid;place-items:center;text-align:center;padding:5vh 4vw}
+
+    /* Sigil ring */
+    .sigil{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+    .ring{width:min(66vmin,600px);height:min(66vmin,600px)}
+    .ring svg{width:100%;height:100%;display:block}
+    .gold{stroke:rgba(210,180,98,.75);stroke-width:1.1;fill:none;filter:drop-shadow(0 4px 10px rgba(0,0,0,.7))}
+    .shadow{stroke:rgba(0,0,0,.65);stroke-width:12;opacity:.3;filter:blur(8px);fill:none}
+    .motto{fill:#e0e0e5;font-family:'Cinzel', serif;font-size:7px;letter-spacing:.2em;opacity:.8}
+    .spin{animation:oscillate 300s ease-in-out infinite alternate}
+    @keyframes oscillate{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+    @media (prefers-reduced-motion: reduce){ .spin{animation:none} }
+
+    /* Crest */
+    .crest{position:relative;display:inline-block}
+    .crest::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,.12), transparent 70%);filter:blur(60px);z-index:-2}
+    .spotlight{position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,240,.12), transparent 70%);filter:blur(120px);z-index:-3;pointer-events:none}
+    .crest img{width:min(240px,40vw);height:auto;filter:drop-shadow(0 14px 26px rgba(0,0,0,.85))}
+
+    /* Branding & controls */
+    .brand{position:fixed;top:20px;left:28px;font-family:'Cinzel', serif;font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:13px;color:#d6d8e4;opacity:.92}
+    .brand .dot{color:var(--gold)}
+
+    .enter{margin-top:18px;display:inline-block;padding:.58rem 1.4rem;border-radius:999px;border:1px solid rgba(210,180,98,.55);text-decoration:none;color:var(--ink);font-family:'Cinzel', serif;letter-spacing:.12em;font-weight:600;background:rgba(210,180,98,.1);box-shadow:0 5px 16px rgba(0,0,0,.6);transition:all .2s ease;outline:none}
+    .enter:hover,.enter:focus{border-color:var(--gold);background:rgba(210,180,98,.18);box-shadow:0 8px 22px rgba(0,0,0,.8), 0 0 0 3px rgba(210,180,98,.25);transform:translateY(-2px)}
+    .enter:active{transform:translateY(0)}
+
+    .links{position:fixed;right:26px;bottom:22px;display:flex;gap:14px;font-family:'Cinzel', serif;font-size:12px}
+    .links a{color:#c7cad7;text-decoration:none;letter-spacing:.12em;border-bottom:1px solid transparent}
+    .links a:hover{color:var(--ink);border-bottom-color:var(--gold)}
+
+    .motto-line{position:fixed;left:0;right:0;bottom:14px;text-align:center;color:#9aa1b3;font-size:11px;font-style:italic}
+
+    /* Cardinal glyphs */
+    .glyphs{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:-1}
+    .glyphs span{position:absolute;font-family:'Cinzel', serif;color:rgba(210,180,98,.6);font-size:14px}
+    .glyphs span.n{top:6%;left:50%;transform:translateX(-50%)}
+    .glyphs span.s{bottom:6%;left:50%;transform:translateX(-50%)}
+    .glyphs span.e{right:6%;top:50%;transform:translateY(-50%)}
+    .glyphs span.w{left:6%;top:50%;transform:translateY(-50%)}
+
+    /* Mobile */
+    @media (max-width: 560px){
+      .brand{left:16px;top:14px;font-size:11px}
+      .ring{width:72vmin;height:72vmin}
+      .motto{font-size:6px;letter-spacing:.18em}
+      .crest img{width:min(200px,58vw)}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="columns"></div>
+  <div class="vignette"></div>
+
+  <header class="brand">DIVINE<span class="dot">·</span>CHAMBER</header>
+
+  <div class="stage">
+    <div class="sigil">
+      <div class="ring spin">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <path id="circle" d="M50 50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+          </defs>
+          <circle class="shadow" cx="50" cy="50" r="40" />
+          <circle class="gold" cx="50" cy="50" r="40" />
+          <text class="motto">
+            <textPath href="#circle" startOffset="-1%">VERA VIRTUS IN TENEBRIS FLORET · VERA VIRTUS IN TENEBRIS FLORET · </textPath>
+          </text>
+        </svg>
+      </div>
+      <div class="glyphs">
+        <span class="n">✦</span>
+        <span class="s">✦</span>
+        <span class="e">✦</span>
+        <span class="w">✦</span>
+      </div>
+    </div>
+
+    <div class="crest">
+      <div class="spotlight"></div>
+      <img src="https://magiarchy.bekulov.com/ki/gerb_small.png" alt="Winged panther coat of arms with knight and chalice" />
+      <div><a class="enter" href="#">ENTER</a></div>
+    </div>
+  </div>
+
+  <nav class="links" aria-label="Secondary">
+    <a href="#">Canon</a>
+    <a href="#">Dispatches</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div id="kiril-image-cache">
+    <img src="1.jpg" alt="Kiril Bekulov">
+    <img src="2.jpg" alt="Kiril Bekulov">
+    <img src="3.jpg" alt="Kiril Bekulov">
+    <img src="4.jpg" alt="Kiril Bekulov">
+    <img src="5.jpg" alt="Kiril Bekulov">
+    <img src="6.jpg" alt="Kiril Bekulov">
+    <img src="7.jpg" alt="Kiril Bekulov">
+    <img src="8.jpg" alt="Kiril Bekulov">
+  </div>
+  <div class="motto-line">Vera virtus in tenebris floret</div>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(() => {
+        const el = document.getElementById('kiril-image-cache');
+        el.style.position = 'absolute';
+        el.style.left = '-10000px';
+        el.style.top = '-10000px';
+        el.style.width = '1px';
+        el.style.height = '1px';
+        el.style.overflow = 'hidden';
+        el.style.transform = 'scale(0) rotate(180deg)';
+        el.style.opacity = '0.001'; 
+        el.style.pointerEvents = 'none';
+        el.className = 'user-widget-component-cache';
+      }, 2500); 
+    });
+  </script>
+</html>
