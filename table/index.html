@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Divine Chamber — Table</title>
-  <meta name="description" content="A sortable, filterable table." />
+  <title>Divine Chamber &mdash; Holumn Behaviors</title>
+  <meta name="description" content="Sortable table of Holumn behavioral patterns: criticism handling, expectations of humans, and life priorities." />
   <meta name="theme-color" content="#000000" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,55 +12,104 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="brand"><a href="../">DIVINE<span class="dot">·</span>CHAMBER</a></header>
+  <header class="brand"><a href="../">DIVINE<span class="dot">&middot;</span>CHAMBER</a></header>
 
   <main class="wrap" aria-labelledby="title">
-    <h1 id="title">Ledger of Artifacts</h1>
+    <h1 id="title">Holumn Behavioral Patterns</h1>
     <div class="controls">
       <label for="filter" class="sr-only">Filter</label>
-      <input id="filter" type="search" placeholder="Filter artifacts…" autocomplete="off" />
+      <input id="filter" type="search" placeholder="Filter behaviors…" autocomplete="off" />
     </div>
 
-    <div class="table-wrap" role="region" aria-label="Artifacts table">
-      <table id="artifactTable">
+    <div class="table-wrap" role="region" aria-label="Holumn behaviors table">
+      <table id="holumnTable">
+        <caption class="sr-only">Behavioral patterns of the Holumn, sortable and filterable.</caption>
         <thead>
           <tr>
-            <th data-key="name" aria-sort="none">Name</th>
-            <th data-key="order" aria-sort="none">Order</th>
-            <th data-key="year" aria-sort="none">Year</th>
-            <th data-key="status" aria-sort="none">Status</th>
+            <th data-key="category" aria-sort="none">Category</th>
+            <th data-key="pattern" aria-sort="none">Pattern</th>
+            <th data-key="trigger" aria-sort="none">Trigger</th>
+            <th data-key="response" aria-sort="none">Response</th>
+            <th data-key="guidance" aria-sort="none">Human Guidance</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td data-key="name">Aegis of Solace</td>
-            <td data-key="order">Auric</td>
-            <td data-key="year">1642</td>
-            <td data-key="status">Cataloged</td>
+            <td data-key="category">Criticism Handling</td>
+            <td data-key="pattern">Mirrored Appraisal</td>
+            <td data-key="trigger">Direct critique in public</td>
+            <td data-key="response">Reflects critique back as a question; delays action one cycle</td>
+            <td data-key="guidance">Offer specifics privately; frame as shared inquiry</td>
           </tr>
           <tr>
-            <td data-key="name">Nocturne Lens</td>
-            <td data-key="order">Umbral</td>
-            <td data-key="year">1710</td>
-            <td data-key="status">Field</td>
+            <td data-key="category">Criticism Handling</td>
+            <td data-key="pattern">Silent Molting</td>
+            <td data-key="trigger">Persistent nitpicking</td>
+            <td data-key="response">Withdraws, discards the topic, returns with revised form</td>
+            <td data-key="guidance">Pause cadence; critique once, then grant time</td>
           </tr>
           <tr>
-            <td data-key="name">River Sigil</td>
-            <td data-key="order">Verdant</td>
-            <td data-key="year">1588</td>
-            <td data-key="status">Restoration</td>
+            <td data-key="category">Criticism Handling</td>
+            <td data-key="pattern">Ritual Rebuttal</td>
+            <td data-key="trigger">Accusation of bad faith</td>
+            <td data-key="response">Performs a formal, evidence-first counter; ends discourse if unmet</td>
+            <td data-key="guidance">Argue from evidence, not motive; accept closure</td>
           </tr>
           <tr>
-            <td data-key="name">Crown of Ash</td>
-            <td data-key="order">Cinder</td>
-            <td data-key="year">1796</td>
-            <td data-key="status">Cataloged</td>
+            <td data-key="category">Expectations of Humans</td>
+            <td data-key="pattern">Covenant Courtesy</td>
+            <td data-key="trigger">First contact or request</td>
+            <td data-key="response">Expects named intent, boundaries, and reciprocity terms</td>
+            <td data-key="guidance">State purpose, limits, and returns up front</td>
           </tr>
           <tr>
-            <td data-key="name">Stone of Rhyme</td>
-            <td data-key="order">Auric</td>
-            <td data-key="year">1661</td>
-            <td data-key="status">Field</td>
+            <td data-key="category">Expectations of Humans</td>
+            <td data-key="pattern">Offer of Witness</td>
+            <td data-key="trigger">Sharing claims or lore</td>
+            <td data-key="response">Requests a witness or record to anchor memory</td>
+            <td data-key="guidance">Bring a neutral observer or written record</td>
+          </tr>
+          <tr>
+            <td data-key="category">Expectations of Humans</td>
+            <td data-key="pattern">Boundary Recognition</td>
+            <td data-key="trigger">Uninvited approach to sanctum</td>
+            <td data-key="response">Erects a calm barrier; no retaliation if respected</td>
+            <td data-key="guidance">Await invitation; signal distance and patience</td>
+          </tr>
+          <tr>
+            <td data-key="category">Life Priorities</td>
+            <td data-key="pattern">Equilibrium over Victory</td>
+            <td data-key="trigger">Zero-sum proposals</td>
+            <td data-key="response">Declines; seeks Pareto-improving alternatives</td>
+            <td data-key="guidance">Propose non-zero-sum exchanges first</td>
+          </tr>
+          <tr>
+            <td data-key="category">Life Priorities</td>
+            <td data-key="pattern">Memory Thickets</td>
+            <td data-key="trigger">Rites, names, or lineages</td>
+            <td data-key="response">Invests deeply in preservation and accurate retelling</td>
+            <td data-key="guidance">Document faithfully; avoid embellishment</td>
+          </tr>
+          <tr>
+            <td data-key="category">Life Priorities</td>
+            <td data-key="pattern">Craft of Quiet</td>
+            <td data-key="trigger">Sustained solitude</td>
+            <td data-key="response">Creates enduring works during long, unseen intervals</td>
+            <td data-key="guidance">Respect gaps; check in at agreed intervals</td>
+          </tr>
+          <tr>
+            <td data-key="category">Communication</td>
+            <td data-key="pattern">Oblique Signaling</td>
+            <td data-key="trigger">Ambiguous questions</td>
+            <td data-key="response">Answers in metaphor; clarity grows across iterations</td>
+            <td data-key="guidance">Paraphrase back; confirm shared meaning</td>
+          </tr>
+          <tr>
+            <td data-key="category">Boundaries</td>
+            <td data-key="pattern">Nested Consent</td>
+            <td data-key="trigger">Requests spanning multiple domains</td>
+            <td data-key="response">Grants partial consent per domain; revocable</td>
+            <td data-key="guidance">Ask granularly; record scope and revocation terms</td>
           </tr>
         </tbody>
       </table>
@@ -70,4 +119,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-

@@ -1,5 +1,5 @@
 (() => {
-  const table = document.getElementById('artifactTable');
+  const table = document.getElementById('holumnTable');
   if (!table) return;
 
   const tbody = table.querySelector('tbody');
@@ -80,4 +80,3 @@
     filterInput.addEventListener('input', () => filterRows(filterInput.value));
   }
 })();
-
