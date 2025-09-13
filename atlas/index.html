@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divine Chamber — Holumn Atlas</title>
+  <meta name="description" content="Interactive atlas of Holumn behavioral patterns and relationships." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.26.0/dist/cytoscape.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="brand"><a href="../">DIVINE<span class="dot">&middot;</span>CHAMBER</a></header>
+
+  <main class="wrap" aria-labelledby="title">
+    <div class="topbar">
+      <h1 id="title">Holumn Atlas</h1>
+      <div class="controls">
+        <label for="search" class="sr-only">Search</label>
+        <input id="search" type="search" placeholder="Search behaviors, triggers, guidance…" autocomplete="off" />
+        <label for="layout" class="sr-only">Layout</label>
+        <select id="layout" aria-label="Layout">
+          <option value="cose" selected>CoSE (clusters)</option>
+          <option value="breadthfirst">Tree</option>
+          <option value="circle">Circle</option>
+        </select>
+        <button id="reset" type="button">Reset View</button>
+      </div>
+    </div>
+
+    <section class="grid">
+      <aside class="panel legend" aria-label="Legend">
+        <h2>Legend</h2>
+        <ul>
+          <li><span class="swatch category"></span> Category</li>
+          <li><span class="swatch pattern"></span> Pattern</li>
+          <li><span class="swatch trigger"></span> Trigger</li>
+          <li><span class="swatch response"></span> Response</li>
+          <li><span class="swatch guidance"></span> Human Guidance</li>
+        </ul>
+        <p class="hint">Click nodes to reveal details. Use search to highlight matches.</p>
+      </aside>
+      <div id="cy" role="region" aria-label="Holumn behavior graph" tabindex="0"></div>
+      <aside class="panel details" aria-live="polite">
+        <h2>Details</h2>
+        <div id="details-body">
+          <p>Select any node to see its description and relations.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
+
