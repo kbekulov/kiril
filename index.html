@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Divine Chamber</title>
   <meta name="description" content="Divine Chamber — a threshold between order and myth. Vera virtus in tenebris floret." />
+  <meta name="theme-color" content="#000000" />
   <meta property="og:title" content="Divine Chamber" />
   <meta property="og:description" content="Vera virtus in tenebris floret." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="gerb_small.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -64,6 +67,9 @@
 
     .motto-line{position:fixed;left:0;right:0;bottom:14px;text-align:center;color:#9aa1b3;font-size:11px;font-style:italic}
 
+    /* Hidden image cache (for preloading only) */
+    #kiril-image-cache{position:absolute;left:-10000px;top:-10000px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
+
     /* Cardinal glyphs */
     .glyphs{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:-1}
     .glyphs span{position:absolute;font-family:'Cinzel', serif;color:rgba(210,180,98,.6);font-size:14px}
@@ -112,7 +118,7 @@
 
     <div class="crest">
       <div class="spotlight"></div>
-      <img src="gerb_small.png" />
+      <img src="gerb_small.png" alt="Divine Chamber crest" />
       <div><a class="enter" href="#">ENTER</a></div>
     </div>
   </div>
@@ -122,33 +128,16 @@
     <a href="#">Dispatches</a>
     <a href="#">Contact</a>
   </nav>
-  <div id="kiril-image-cache">
-    <img src="1.png" alt="Kiril Bekulov">
-    <img src="2.png" alt="Kiril Bekulov">
-    <img src="3.png" alt="Kiril Bekulov">
-    <img src="4.png" alt="Kiril Bekulov">
-    <img src="5.png" alt="Kiril Bekulov">
-    <img src="6.png" alt="Kiril Bekulov">
+  <div id="kiril-image-cache" aria-hidden="true">
+    <img src="1.png" alt="">
+    <img src="2.png" alt="">
+    <img src="3.png" alt="">
+    <img src="4.png" alt="">
+    <img src="5.png" alt="">
+    <img src="6.png" alt="">
   </div>
   <div class="motto-line">Vera virtus in tenebris floret</div>
 </body>
-<script>
-    window.addEventListener('DOMContentLoaded', function () {
-      setTimeout(() => {
-        const el = document.getElementById('kiril-image-cache');
-        el.style.position = 'absolute';
-        el.style.left = '-10000px';
-        el.style.top = '-10000px';
-        el.style.width = '1px';
-        el.style.height = '1px';
-        el.style.overflow = 'hidden';
-        el.style.transform = 'scale(0) rotate(180deg)';
-        el.style.opacity = '0.001'; 
-        el.style.pointerEvents = 'none';
-        el.className = 'user-widget-component-cache';
-      }, 2500); 
-    });
-  </script>
 </html>
 
 
