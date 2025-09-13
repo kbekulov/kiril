@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divine Chamber — Table</title>
+  <meta name="description" content="A sortable, filterable table." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="brand"><a href="../">DIVINE<span class="dot">·</span>CHAMBER</a></header>
+
+  <main class="wrap" aria-labelledby="title">
+    <h1 id="title">Ledger of Artifacts</h1>
+    <div class="controls">
+      <label for="filter" class="sr-only">Filter</label>
+      <input id="filter" type="search" placeholder="Filter artifacts…" autocomplete="off" />
+    </div>
+
+    <div class="table-wrap" role="region" aria-label="Artifacts table">
+      <table id="artifactTable">
+        <thead>
+          <tr>
+            <th data-key="name" aria-sort="none">Name</th>
+            <th data-key="order" aria-sort="none">Order</th>
+            <th data-key="year" aria-sort="none">Year</th>
+            <th data-key="status" aria-sort="none">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-key="name">Aegis of Solace</td>
+            <td data-key="order">Auric</td>
+            <td data-key="year">1642</td>
+            <td data-key="status">Cataloged</td>
+          </tr>
+          <tr>
+            <td data-key="name">Nocturne Lens</td>
+            <td data-key="order">Umbral</td>
+            <td data-key="year">1710</td>
+            <td data-key="status">Field</td>
+          </tr>
+          <tr>
+            <td data-key="name">River Sigil</td>
+            <td data-key="order">Verdant</td>
+            <td data-key="year">1588</td>
+            <td data-key="status">Restoration</td>
+          </tr>
+          <tr>
+            <td data-key="name">Crown of Ash</td>
+            <td data-key="order">Cinder</td>
+            <td data-key="year">1796</td>
+            <td data-key="status">Cataloged</td>
+          </tr>
+          <tr>
+            <td data-key="name">Stone of Rhyme</td>
+            <td data-key="order">Auric</td>
+            <td data-key="year">1661</td>
+            <td data-key="status">Field</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+:root{
+  --gold:#d2b462;
+  --ink:#ececf1;
+  --muted:#aeb3c1;
+  --bg:#000;
+  --panel:#0b0b0f;
+  --panel-2:#101019;
+  --line:#232331;
+  --shadow:0 10px 30px rgba(0,0,0,.55);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Cormorant Garamond', serif;
+}
+
+.brand{
+  position:sticky;top:0;z-index:10;
+  padding:14px 18px;margin:0;font-family:'Cinzel', serif;font-weight:700;
+  letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#d6d8e4;
+  background:linear-gradient(180deg, rgba(0,0,0,.7), rgba(0,0,0,0));
+}
+.brand .dot{color:var(--gold)}
+.brand a{color:inherit;text-decoration:none}
+
+.wrap{max-width:980px;margin:28px auto;padding:0 18px}
+h1{font-family:'Cinzel', serif;font-size:28px;letter-spacing:.06em;margin:0 0 12px 0}
+
+.controls{display:flex;justify-content:flex-end;margin:12px 0 16px}
+.controls input[type="search"]{
+  appearance:none;background:var(--panel);border:1px solid var(--line);color:var(--ink);
+  padding:.55rem .8rem;border-radius:10px;min-width:240px;
+  box-shadow:var(--shadow);
+}
+.controls input::placeholder{color:var(--muted)}
+
+.table-wrap{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  border:1px solid var(--line);border-radius:14px;overflow:auto;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:separate;border-spacing:0}
+thead th{
+  position:sticky;top:0;background:var(--panel-2);color:#dcdfe8;
+  text-align:left;font-family:'Cinzel', serif;font-size:12px;letter-spacing:.12em;
+  border-bottom:1px solid var(--line);padding:.7rem .9rem;cursor:pointer;
+}
+tbody td{padding:.75rem .9rem;border-bottom:1px solid var(--line)}
+tbody tr:nth-child(odd){background:rgba(255,255,255,.02)}
+tbody tr:hover{background:rgba(210,180,98,.08)}
+
+th.sort-asc::after{content:" \25B2";color:var(--gold)}
+th.sort-desc::after{content:" \25BC";color:var(--gold)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+@media (max-width: 640px){
+  .controls{justify-content:stretch}
+  .controls input{min-width:unset;width:100%}
+}
+
